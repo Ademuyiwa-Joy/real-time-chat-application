@@ -79,6 +79,7 @@ socket.on('locationMessage', (link) => {
 	})
 
 	$messagesDiv.insertAdjacentHTML("beforeend", requiredHtml)
+	$messagesDiv.scrollTop = $messagesDiv.scrollHeight;
 })
 
 socket.on('usersInRoom', ({room, users}) => {
