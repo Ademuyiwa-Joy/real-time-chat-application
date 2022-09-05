@@ -1,0 +1,66 @@
+<!-- INSPIRED BY BRAD TRAVERSY CHAT APP -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+			integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="icon" href="css/img/favicon.png">
+		<title>Aladey Chat App</title>
+	</head>
+	<body>
+		<div class="join-container">
+			<header class="join-header">
+				<h1><span style="color: skyblue;"><i class="fas fa-kiwi-bird"></i></span> AladeyChats</h1>
+			</header>
+			<main class="join-main">
+				<form action="chat.html" id="form">
+          			
+					<div class="form-control">
+						<label for="username">Username</label>
+						<input
+							type="text"
+							name="username"
+							id="username"
+							placeholder="Enter username..."
+							autocomplete="off"
+							required
+						/>
+					</div>
+					<div class="form-control">
+						<label for="room">Room-name</label>
+						<input
+							type="text"
+							name="room"
+							id="room"
+							placeholder="Enter room name..."
+							autocomplete="off"
+						/>
+					</div>
+
+					<div class="form-control">
+						<label>... or join a Chat Channel</label>
+						<select id="select">
+							<option value="Link-up">Meet with random people</option>
+							<option value="Business">Business </option>
+							<option value="Technology">Technology</option>
+							<option value="Sports">Sports</option>
+							<option value="News">International News</option>
+						</select>
+					</div>
+          <div class="flex">
+            <button type="submit" class="btn" id="login">Login to Chat</button>
+          </div>
+				</form>
+			</main>
+		</div>
+		<script src="./js/index.js"></script>
+	</body>
+</html>

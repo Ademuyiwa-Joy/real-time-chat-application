@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="css/img/favicon.png">
+  <title>Aladey Chat App</title> 
+</head>
+<body>
+  <div class="chat-container">
+    <header class="chat-header">
+      <h1><span style="color: skyblue;"><i class="fas fa-kiwi-bird"></i></span> AladeyChats </h1>
+      <a href="./index.html" class="btn" id="leave-btn">Leave Room</a>
+    </header>
+
+    <main class="chat-main">
+      <div class="chat-sidebar">
+        <h2 id="room-name"></h2>
+        <h3><i class="fas fa-user"></i> Online</h3>
+        <div id="users">
+        </div>
+      </div>
+      <div class="chat-messages" id="messages">
+      </div>
+    </main>
+    
+    <div class="chat-form-container">
+      <form id="chat-form">
+        <input
+          id="msg"
+          type="text"
+          name="message"
+          placeholder="Type a Message"
+          required
+          autocomplete="off"
+        />
+        <button class="btn-plane" id="send-btn"><i class="fas fa-paper-plane"></i> </button>
+		<button id="myBtn">Share Location</button>
+	</form>
+    </div>
+  </div>
+
+  <script id="message-template" type="text/html">
+    <div class="message">
+      <p class="naming">
+        <span class="message__name">{{username }}</span>
+        <span class="message__meta">{{time}}</span>
+      </p>
+      <p>{{message}}</p>
+    </div>
+    <div>
+    </div>
+  </script>
+  <script id="location-template" type="text/html">
+    <div class="message">
+      <p class="naming">
+        <span class="message__name">{{username }}</span>
+        <span class="message__meta">{{time}}</span>
+      </p>
+      <p><a id="currentLocation" href="{{url}}" target="_blank">My-current-location</a></p>
+    </div>
+    <div>
+
+    </div>
+  </script>
+  <script id="online-users-template" type="text/html"> 
+    <ul>
+      {{#users}}
+        <li>{{username}}</li>
+      {{/users}} 
+    </ul>
+  </script>
+  <script id="room-name-template" type="text/html">
+    {{room}}
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.0/qs.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/chat.js"></script>
+</body>
+</html>
